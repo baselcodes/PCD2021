@@ -7,7 +7,7 @@ For this year's P5.js beginners workshop we'll use [Ted Davis' P5LIVE](https://t
 
 ## P5.js
 
-Let's look at the basics of your P5.js sketch. This is the file `sketch.js` inside your project folder.
+Let's look at the basics of your P5.js sketch.
 
 ### 1. Basic functions:
 
@@ -29,7 +29,7 @@ function draw() {
 ```
 ### 2. Coordinate system and units of measure:
 
-In P5.js you work with a `x` and `y` axis. `x` is horizontal or the "width", `y` is vertical or the "height" of an object. Usually you work with numbers which equal to pixel (e.g. `100` is 100px on your screen). You can also use a relative unit instead of pixel. For example trough calculation `x = width * 1.5`. If the `width` changes, `x` is also changing. For working with retina displays it's usefull to add `pixelDensity(1);` to the setup. 
+In P5.js you work with a `x` and `y` axis. `x` is horizontal or the "width", `y` is vertical or the "height" of an object. Usually you work with numbers which reference the pixel value of that number (e.g. `100` is 100px on your screen). You can also use a relative unit instead of pixel. For example by calculating `x = width * 1.5`. If the `width` changes, `x` also changes. For working with retina displays it's useful to add `pixelDensity(1);` to the setup. 
 
 ```
 createCanvas(720, 400); //canvas is 720 x 400 px
@@ -37,11 +37,11 @@ pixelDensity(1); //takes care of hi-res retina displays
 ```
 
 ```
-rect(10, 20, 50, 50); //rectangle is positioned at x: 10, y: 20 and 50 x 50 px
+rect(10, 20, 50, 50); //rectangle is positioned at x: 10, y: 20 and 50 x 50 px size
 ```
 
-### 3. Primitiv shapes
-There are different shapes predefined. Including rectangles, circles, triangles and more. [For a full reference visit the p5.js website](https://p5js.org/examples/form-shape-primitives.html). Depending on there shape they need different arguments:
+### 3. Primitive shapes
+There are different shapes predefined inside P5.js; Rectangles, circles, triangles and more. [For a full reference visit the p5.js website](https://p5js.org/examples/form-shape-primitives.html). Different shapes need different arguments (arguments are the values inside of the brackets used to define characteristics of the object:
 
 ```
 rect(x, y, width, height);
@@ -75,13 +75,14 @@ You can also use different color modes like HEX, HSB or HSL or RGBA (transparenc
 
 ### 5. Variables
 
-To be more flexible you can use variables. They are key elements of Javascript.
+To be more flexible you can use variables. Variables allow you to save a value of some kind under a name, to have easy access to that value later on. They are key elements of Javascript and coding more broadly.
 
 ```
 var myVariableName; // declare a variable
+let myVariableName; // also declare a variable, for our purposes the `let` and `var` keywords can be used.
 var size = 100; // declare a variable and assign a value
 ```
-Now you can use this variable (and it's value) in the code: `rect(0, 0, size, size);` Awesome! 🎉
+Now you can use this variable (and its value) in the code: `rect(0, 0, size, size);` Awesome! 🎉
 
 Variables have a scope. This means, that where you declare the variable also defines where in the code you can use them.
 
@@ -100,11 +101,11 @@ function draw() {
 
 ```
 
-There are also built in variable like `mouseX`, `mouseY` as well as canvas `width` and `height`. 
+There are also built-in variable like `mouseX`, `mouseY` as well as canvas `width` and `height`. 
 
 ### 6. Datatypes
 
-There are a few datatype to know about. 🚨 **Usually we use all of them in combinations with variables!**
+There are a few datatypes to know about. 🚨 **Usually we use all of them in combinations with variables!**
 
 ```
 var a = 100 // mostly numbers
@@ -120,7 +121,7 @@ d[1] // gives you 20
 
 ![](img/array.png)
 
-Yeah, the array is a weird thing! 🔮 Why does it start at 0? Nobody knows, just remember it. Arrays are super usefull! Also practically every data out in the web (e.g. your facebook likes) is safed as array data type.
+Yeah, the array is a weird thing! 🔮 Why does it start at 0? Nobody knows, just remember it. Arrays are super useful! Practically all data out in the web (e.g. your facebook likes) is saved as an array.
 
 ### 7. Console
 

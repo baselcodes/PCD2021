@@ -1,43 +1,9 @@
 # P5.js-for-beginners
-This is the repository for the P5.js beginners workshop at the processing Community Day 2019 in Basel. 
+This is the repository for the P5.js beginners workshop at the processing Community Day 2021 in Basel. 
 
 ## Setup
 
-Let's first download a code editor of your choice and install a live server plugin. This plugin simulates a web server so you have the same working conditions like having your project on a "real" website. We can recommend you to editors:
-
-##### Visual Studio Code:
-
-1. [Install Visual Studio Code](https://code.visualstudio.com/)
-2. Go to Plugins and search for Live Server by Ritwick Dey -> Install
-3. Open current project folder in Visual Studio Code
-4. In the bottom right corner click -> Go Live
-5. A browser window will open showing the project.
-
-##### Atom:
-
-1. [Install Atom](https://atom.io/)
-2. Install atom-live-server from Preferences -> Install -> Install Packages
-3. Open current project folder in Atom
-4. From Menu Bar open Packages -> atom-live-server -> run ....
-5. A browser window will open showing the project.
-
-
-## Folder Structure
-
-We provide you with starting templates to download (on the top of the page). They will have the following folder structure:
-
-```
-00_empty_template //folder top open in editor, can be renamed
-│   index.html //the file shown by the browser
-│   sketch.js //this is where your p5.js code will go!
-│
-└─── assets //the files required by the website
-     │  
-     │
-     └─── css
-     │   └─── style.css  //stylesheet for this website
-     │
-     └─── p5js //p5js library
+For this year's P5.js beginners workshop we'll use [Ted Davis' P5LIVE](https://teddavis.org/p5live/). 
 
 ```
 

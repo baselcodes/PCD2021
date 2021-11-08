@@ -5,8 +5,6 @@ This is the repository for the P5.js beginners workshop at the processing Commun
 
 For this year's P5.js beginners workshop we'll use [Ted Davis' P5LIVE](https://teddavis.org/p5live/). 
 
-```
-
 ## P5.js
 
 Let's look at the basics of your P5.js sketch. This is the file `sketch.js` inside your project folder.

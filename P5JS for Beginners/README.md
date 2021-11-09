@@ -1,4 +1,4 @@
-# P5.js-for-beginners
+# Intro to P5js
 This is the repository for the P5.js beginners workshop at the processing Community Day 2021 in Basel. 
 
 ## Setup

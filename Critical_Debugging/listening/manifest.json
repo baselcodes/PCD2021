@@ -1,0 +1,30 @@
+{
+  "description": "Intercepting the Capturing of Data",
+  "manifest_version": 2,
+  "name": "listening",
+  "version": "1.0",
+  "browser_action": {
+    "default_title": "making music since"     
+  },
+  "externally_connectable": {
+    "matches": ["*://*.youtube.com/*"]
+  },
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.youtube.com/*", 
+    "*://i.ytimg.com/*"
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://i.ytimg.com/*"],
+      "js": ["p5.min.js", "p5.sound.min.js", "drone.js", "content-script.js"]
+    }
+  ]
+}

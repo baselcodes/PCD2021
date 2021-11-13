@@ -10,9 +10,10 @@ let myp5 = new p5(drone)
  */
 browser.runtime.onMessage.addListener(
     (request, sender, send_response) => {
-        console.log('message');
-        console.log(request)
-        myp5.percussion()
+        myp5.percussion(
+            request['id'],
+            request['data']['value']
+        )
         send_response({ res: 'item received from content script' })
     }
 )

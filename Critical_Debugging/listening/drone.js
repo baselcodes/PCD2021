@@ -1,5 +1,3 @@
-// const p5Min = require("./p5.min");
-
 console.log('loaded sketch');
 
 
@@ -9,7 +7,7 @@ console.log('loaded sketch');
 
 const drone = function (s) {
 
-  s.base_freq = 80
+  s.base_freq = 55 //A3
   s.detune_mult = 2
   s.drone = new Array(3)
   s.delay,
@@ -28,6 +26,7 @@ const drone = function (s) {
       s.userStartAudio()
       for (let i = 0; i < s.drone.length; i++) {
         s.drone[i] = new p5.Oscillator(s.base_freq + (i * s.detune_mult), 'sawtooth')
+        // 'sine', 'triangle', 'sawtooth' and 'square'
       }
 
 
@@ -38,7 +37,7 @@ const drone = function (s) {
       ///~~~ DELAY ~~~///
       s.delay = new p5.Delay()
       s.delay.delayTime(0.65)
-      s.delay.feedback(0.35)
+      s.delay.feedback(0.35) // <== please below 1.0
       ///~~~ REVERB ~~~///
       s.reverb = new p5.Reverb()
       s.reverb.set(6, 2)
@@ -85,11 +84,62 @@ const drone = function (s) {
 
   }
 
-  s.percussion = function () {
+  s.percussion = function (id, data) {
     // change pitch of the drone with a sweep
-    console.log('percussion!')
-    s.drone[0].freq(440, 0.02) // increase pitch to 440 Hz in 0.02 s
-    s.drone[0].freq(s.base_freq, 0.5, 0.2) // decrease back to base frequency
+    console.log(id, data)
+    let custom_freq, attack, decay
+    switch (id) {
+      case 'watchtime':
+        console.log('~~~ watchtime ~~~')
+        const volume = data['volume']
+        let value = volume.split('%2C') // ['55', '55', '55']
+        value = value[value.length - 1]
+
+        custom_freq = s.map(value, 0, 100, 330, 1100)
+
+        attack = 0.02
+        decay = 0.5
+
+        s.drone[0].freq(custom_freq, attack) // increase pitch to custom_freq Hz in 0.02 s
+        s.drone[0].freq(s.base_freq, decay, attack) // decrease back to base frequency
+
+        s.drone[1].freq(custom_freq, attack) // increase pitch to custom_freq Hz in 0.02 s
+        s.drone[1].freq(s.base_freq, decay, attack) // decrease back to base frequency
+
+        break;
+
+      case 'qoe':
+
+        custom_freq = 1100
+
+        attack = 1
+        decay = 0.75
+
+        s.drone[0].freq(custom_freq, attack) // increase pitch to custom_freq Hz in 0.02 s
+        s.drone[0].freq(s.base_freq, decay, attack) // decrease back to base frequency
+
+        s.drone[1].freq(custom_freq, attack) // increase pitch to custom_freq Hz in 0.02 s
+        s.drone[1].freq(s.base_freq, decay, attack) // decrease back to base frequency
+
+        break;
+
+      case 'log-event':
+        custom_freq = 1100
+
+        attack = 0.02
+        decay = 0.5
+
+        s.drone[0].freq(custom_freq, attack) // increase pitch to custom_freq Hz in 0.02 s
+        s.drone[0].freq(s.base_freq, decay, attack) // decrease back to base frequency
+
+        s.drone[1].freq(custom_freq, attack) // increase pitch to custom_freq Hz in 0.02 s
+        s.drone[1].freq(s.base_freq, decay, attack) // decrease back to base frequency
+        break;
+    }
+    // attack = 0.02
+    // decay = 0.2
+    // s.drone[0].freq(880, attack) // increase pitch to 880 Hz in 0.02 s
+    // s.drone[0].freq(s.base_freq, decay, attack) // decrease back to base frequency
 
 
   }

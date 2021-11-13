@@ -1,4 +1,4 @@
-console.log('hello from the background');
+console.log('gdgdgggdgdgdgdgddgdg  ');
 
 
 
@@ -52,7 +52,7 @@ function tamper_request_listener(e) {
       if (e.url.includes('log_event?')) {
         // do something with the JSON
         console.log(json)
-        send_message('message from the request listener', { value: Math.random() * 100 })
+        send_message('log-event', { value: json })
 
       }
     }
@@ -63,14 +63,14 @@ function tamper_header_listener(e) {
     console.log("///~~~ watchtime ~~~///")
     const json = get_params_from_url(e.url)
     console.log(json)
-    send_message('message from the header listener', { value: Math.random() * 100 })
+    send_message('watchtime', { value: json })
     console.log('///~~~~~~~~~~~~///')
   }
   if (e.url.includes('qoe?')) {
     console.log("///~~~ qoe ~~~///")
     const json = get_params_from_url(e.url)
     console.log(json)
-    send_message('message from qoe?', { value: Math.random() * 100 })
+    send_message('qoe', { value: json })
     console.log('///~~~~~~~~~~~~///')
   }
 }

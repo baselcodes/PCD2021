@@ -12,7 +12,7 @@ browser.runtime.onMessage.addListener(
     (request, sender, send_response) => {
         console.log('message');
         console.log(request)
-
+        myp5.percussion()
         send_response({ res: 'item received from content script' })
     }
 )

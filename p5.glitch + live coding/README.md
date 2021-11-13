@@ -3,4 +3,4 @@
 
 ---
 
-... details + link to material coming soon!
+### » [workshop materials](http://dusie.ch/2122/pcd21/)
